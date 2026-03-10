@@ -482,8 +482,6 @@ class LoadedModel:
 
         bake_gguf_model(real_model)
 
-        self.model.refresh_loras()
-
         self.real_model = weakref.ref(real_model)
         self.model_finalizer = weakref.finalize(real_model, cleanup_models)
         return real_model
